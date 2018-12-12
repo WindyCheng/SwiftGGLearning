@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4240DC21C1148B00BCF757 /* Ranges.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ranges.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0BA882DD21BF9774002FAC7C /* SwiftGGLeaning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGGLeaning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA882E021BF9774002FAC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA882E221BF9774002FAC7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		0BA882FD21C0DDA9002FAC7C /* SwitchWithTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTextTableViewCell.swift; sourceTree = "<group>"; };
 		0BA8830221C0E399002FAC7C /* SwiftFanxing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftFanxing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0BA8830321C0E67E002FAC7C /* 运算符重载.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "运算符重载.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		0BE2079221C1089200A411B6 /* tupe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tupe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,8 @@
 			children = (
 				0BA882E021BF9774002FAC7C /* AppDelegate.swift */,
 				0BA882E221BF9774002FAC7C /* ViewController.swift */,
+				0B4240DC21C1148B00BCF757 /* Ranges.playground */,
+				0BE2079221C1089200A411B6 /* tupe.playground */,
 				0BA8830321C0E67E002FAC7C /* 运算符重载.playground */,
 				0BA8830221C0E399002FAC7C /* SwiftFanxing.playground */,
 				0BA882FA21C0BE0A002FAC7C /* Fuctions.playground */,
