@@ -36,6 +36,7 @@
 		0BA8830221C0E399002FAC7C /* SwiftFanxing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftFanxing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0BA8830321C0E67E002FAC7C /* 运算符重载.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "运算符重载.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0BE2079221C1089200A411B6 /* tupe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tupe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		0BED457221C1198E00CBAAFB /* MatchPattern.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MatchPattern.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 			children = (
 				0BA882E021BF9774002FAC7C /* AppDelegate.swift */,
 				0BA882E221BF9774002FAC7C /* ViewController.swift */,
+				0BED457221C1198E00CBAAFB /* MatchPattern.playground */,
 				0B4240DC21C1148B00BCF757 /* Ranges.playground */,
 				0BE2079221C1089200A411B6 /* tupe.playground */,
 				0BA8830321C0E67E002FAC7C /* 运算符重载.playground */,

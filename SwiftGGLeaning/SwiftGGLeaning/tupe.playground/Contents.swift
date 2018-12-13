@@ -48,3 +48,35 @@ print(a)
 var A = 5
 var B = 4
 (B, A) = (A, B)
+
+
+//下面是一个示范如何将map和flatMap的调用级联起来去做多次转换的例子。我们从一个字符串开始，把它按单词分开，然后依次做如下转换：
+//
+//统计每个单词的字符个数，做计数
+//把每个计数转换成一个相对应的单词
+//给每个结果加个后缀
+//对每个字符串结果做%转义
+//把每个字符串结果转换成一个NSURL
+let formatter = NumberFormatter()
+formatter.numberStyle = .spellOut
+//let formatter = NSNumberFormatter()
+//formatter.numberStyle = .SpellOutStyle
+//let string = "This is Functional Programming"
+//let translateURLs = string
+//    // Split the characters into words
+//    .characters.split(" ")
+//    // Count the number of characters on each word
+//    .map { $0.count }
+//    // Spell out this number of chars (`stringFromNumber` can return nil)
+//    .flatMap { (n: Int) -> String? in formatter.stringFromNumber(n) }
+//    // add " letters" suffix
+//    .map { "\($0) letters" }
+//    // encode the string so it can be used in an NSURL framgment after the # (the stringByAdding… method can return nil)
+//    .flatMap { $0.stringByAddingPercentEncodingWithAllowedCharacters(.URLFragmentAllowedCharacterSet()) }
+//    // Build an NSURL using that string (`NSURL(string: …)` is failable: it can return nil)
+//    .flatMap { NSURL(string: "https://translate.google.com/#auto/fr/\($0)") }
+//
+//print(translateURLs)
+//// [https://translate.google.com/#auto/fr/four%20letters, https://translate.google.com/#auto/fr/two%20letters, https://translate.google.com/#auto/fr/ten%20letters, https://translate.google.com/#auto/fr/eleven%20letters]
+
+

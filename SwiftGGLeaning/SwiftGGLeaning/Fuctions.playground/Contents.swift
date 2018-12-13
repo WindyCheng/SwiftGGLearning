@@ -1,5 +1,17 @@
 import UIKit
 
+
+let tempArr = [1, 2, 3,4, 5, 6,7, 8, 9]
+
+let squares = tempArr.map{$0 * $0}
+
+squares
+
+let sum = tempArr.reduce(0, { $0 + $1 })
+
+sum
+
+
 func isPositive(value: Int) -> Bool {
     return value > 0
 }
