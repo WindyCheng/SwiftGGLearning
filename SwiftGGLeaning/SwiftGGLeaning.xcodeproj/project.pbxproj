@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B767AEE21C394E4000C9C16 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B767AED21C394E4000C9C16 /* TwoViewController.swift */; };
 		0BA882E121BF9774002FAC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA882E021BF9774002FAC7C /* AppDelegate.swift */; };
 		0BA882E321BF9774002FAC7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA882E221BF9774002FAC7C /* ViewController.swift */; };
 		0BA882E621BF9774002FAC7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA882E421BF9774002FAC7C /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		0B4240DC21C1148B00BCF757 /* Ranges.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ranges.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		0B767AEB21C36113000C9C16 /* 10lines.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 10lines.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		0B767AED21C394E4000C9C16 /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		0BA882DD21BF9774002FAC7C /* SwiftGGLeaning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGGLeaning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA882E021BF9774002FAC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA882E221BF9774002FAC7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			children = (
 				0BA882E021BF9774002FAC7C /* AppDelegate.swift */,
 				0BA882E221BF9774002FAC7C /* ViewController.swift */,
+				0B767AEB21C36113000C9C16 /* 10lines.playground */,
 				0BED457221C1198E00CBAAFB /* MatchPattern.playground */,
 				0B4240DC21C1148B00BCF757 /* Ranges.playground */,
 				0BE2079221C1089200A411B6 /* tupe.playground */,
@@ -79,6 +83,7 @@
 				0BA882FA21C0BE0A002FAC7C /* Fuctions.playground */,
 				0BA882F921C0BD70002FAC7C /* Enmu.playground */,
 				0BA882F221BF97CD002FAC7C /* FirstViewController.swift */,
+				0B767AED21C394E4000C9C16 /* TwoViewController.swift */,
 				0BA8830121C0DDD7002FAC7C /* MVVM */,
 				0BA882E421BF9774002FAC7C /* Main.storyboard */,
 				0BA882E721BF9775002FAC7C /* Assets.xcassets */,
@@ -173,6 +178,7 @@
 				0BA882E321BF9774002FAC7C /* ViewController.swift in Sources */,
 				0BA882E121BF9774002FAC7C /* AppDelegate.swift in Sources */,
 				0BA882FF21C0DDA9002FAC7C /* MinionModeViewModel.swift in Sources */,
+				0B767AEE21C394E4000C9C16 /* TwoViewController.swift in Sources */,
 				0BA8830021C0DDA9002FAC7C /* SwitchWithTextTableViewCell.swift in Sources */,
 				0BA882FE21C0DDA9002FAC7C /* SettingsViewController.swift in Sources */,
 			);

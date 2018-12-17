@@ -34,6 +34,14 @@
                                     <segue destination="1oM-0U-KJ5" kind="show" id="41I-6Q-ric"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-IZ-s7t">
+                                <rect key="frame" x="48" y="484" width="297" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Extention"/>
+                                <connections>
+                                    <segue destination="b87-q1-ffK" kind="show" id="L15-xt-9yV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,13 +107,13 @@
         <!--Settings-->
         <scene sceneID="iLY-qN-qlO">
             <objects>
-                <tableViewController id="1oM-0U-KJ5" customClass="SettingsViewController" customModule="MVVMProtocolExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1oM-0U-KJ5" customClass="SettingsViewController" customModule="SwiftGGLeaning" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZG4-bb-Lkz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.89812389169999995" blue="0.78710313610000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SwitchWithTextTableViewCell" id="iG8-Wc-2ib" customClass="SwitchWithTextTableViewCell" customModule="MVVMProtocolExperiment" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SwitchWithTextTableViewCell" id="iG8-Wc-2ib" customClass="SwitchWithTextTableViewCell" customModule="SwiftGGLeaning" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iG8-Wc-2ib" id="giv-ul-0um">
@@ -155,7 +163,40 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsw-EA-NO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="858"/>
+            <point key="canvasLocation" x="-183" y="869"/>
+        </scene>
+        <!--Two View Controller-->
+        <scene sceneID="cIE-ej-FM0">
+            <objects>
+                <viewController id="b87-q1-ffK" customClass="TwoViewController" customModule="SwiftGGLeaning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6i-H8-qvq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5W-xf-BHL" customClass="FoodImageView" customModule="SwiftGGLeaning" customModuleProvider="target">
+                                <rect key="frame" x="89" y="205" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz6-ez-yRK" customClass="ActionButton" customModule="SwiftGGLeaning" customModuleProvider="target">
+                                <rect key="frame" x="175" y="409" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onShakeButtonTap:" destination="b87-q1-ffK" eventType="touchUpInside" id="TRf-Cu-hFI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="645-6t-Fge"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="oz6-ez-yRK" id="eMC-gQ-uAE"/>
+                        <outlet property="foodImageView" destination="a5W-xf-BHL" id="h76-2y-f5I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0m-dr-6sE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895" y="969"/>
         </scene>
     </scenes>
 </document>

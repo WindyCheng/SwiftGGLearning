@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 //enum FamilyRelationshipType: Int {
 //    case GrandFather = 400
@@ -186,6 +187,196 @@ enum Liquid: Float {
 // Convert liters to milliliters
 print (Liquid.l.convert(amount: 5, to: Liquid.ml))
 //另一个示例是货币的转换。以及数学符号(比如角度与弧度)也可以从中受益。
+
+
+
+enum Media {
+    case Book(title: String, author: String, year: Int)
+    case Movie(title: String, director: String, year: Int)
+    case WebSite(url: URL, title: String)
+}
+
+extension Media {
+    var mediaTitle: String {
+        switch self {
+        case .Book(title: let aTitle, author: _, year: _):
+            return aTitle
+        case .Movie(title: let aTitle, director: _, year: _):
+            return aTitle
+        case .WebSite(url: _, title: let aTitle):
+            return aTitle
+        }
+    }
+}
+
+let book = Media.Book(title: "20,000 leagues under the sea", author: "Jules Verne", year: 1870)
+book.mediaTitle
+
+let count = 7
+switch count {
+case Int.min..<0: print("Negative count, really?")
+case 0: print("Nothing")
+case 1: print("One")
+case 2..<5: print("A few")
+case 5..<10: print("Some")
+default: print("Many")
+}
+
+func charType(car: Character) -> String {
+    switch car {
+    case "A", "E", "I", "O", "U", "Y", "a", "e", "i", "o", "u", "y":
+        return "Vowel"
+    case "A"..."Z", "a"..."z":
+        return "Consonant"
+    default:
+        return "Other"
+    }
+}
+print("Jules Verne".map(charType))
+
+
+
+
+protocol Medium {
+    var title: String { get }
+}
+struct Book: Medium {
+    let title: String
+    let author: String
+    let year: Int
+}
+struct Movie: Medium {
+    let title: String
+    let director: String
+    let year: Int
+}
+struct WebSite: Medium {
+    let url: NSURL
+    let title: String
+}
+
+// And an array of Media to switch onto
+let media: [Medium] = [
+    Book(title: "20,000 leagues under the sea", author: "Jules Vernes", year: 1870),
+    Movie(title: "20,000 leagues under the sea", director: "Richard Fleischer", year: 1955)
+]
+
+
+for medium in media {
+    // The title part of the protocol, so no need for a switch there
+    print(medium.title)
+    // But for the other properties, it depends on the type
+    switch medium {
+    case let b as Book:
+        print("Book published in \(b.year)")
+    case let m as Movie:
+        print("Movie released in \(m.year)")
+    case is WebSite:
+        print("A WebSite with no date")
+    default:
+        print("No year info for \(medium)")
+    }
+}
+
+func test() {
+    fatalError("test")
+//    var a = 1 // 警告：Will never be executed
+//    a = a + 1
+}
+
+//test()
+
+
+enum MediaA{
+    case Book(title: String, author: String, year: Int)
+    case Movie(title: String, director: String, year: Int)
+    case WebSite(urlString: String)
+}
+
+let m = MediaA.Movie(title: "Captain America: Civil War", director: "Russo Brothers", year: 2016)
+
+if case let MediaA.Movie(title, _, _) = m {
+    print("This is a movie named \(title)")
+}
+
+//改用 switch 后更冗长的版本：
+switch m {
+case let MediaA.Movie(title, _, _):
+    print("This is a movie named \(title)")
+default: () // do nothing, but this is mandatory as all switch in Swift must be exhaustive
+}
+
+
+if case let MediaA.Movie(_, _, year) = m, year < 1888 {
+    print("Something seems wrong: the movie's year is before the first movie ever made.")
+}
+
+
+enum NetworkResponse {
+    case Response(URLResponse, Data)
+    case Error(Error)
+}
+
+func processRequestResponse(response: NetworkResponse) {
+    guard case let .Response(urlResp, data) = response,
+        let httpResp = urlResp as? HTTPURLResponse, 200..<300 ~= httpResp.statusCode else {
+            print("Invalid response, can't process")
+            return
+    }
+    print("Processing \(data.count) bytes…")
+    /* … */
+}
+
+let mediaList: [Media] = [
+    .Book(title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", year: 1997),
+    .Movie(title: "Harry Potter and the Philosopher's Stone", director: "Chris Columbus", year: 2001),
+    .Book(title: "Harry Potter and the Chamber of Secrets", author: "J.K. Rowling", year: 1999),
+    .Movie(title: "Harry Potter and the Chamber of Secrets", director: "Chris Columbus", year: 2002),
+    .Book(title: "Harry Potter and the Prisoner of Azkaban", author: "J.K. Rowling", year: 1999),
+    .Movie(title: "Harry Potter and the Prisoner of Azkaban", director: "Alfonso Cuarón", year: 2004),
+    .Movie(title: "J.K. Rowling: A Year in the Life", director: "James Runcie", year: 2007),
+//    .WebSite(url: (URL(string:"https://en.wikipedia.org/wiki/List_of_Harry_Potter-related_topics" ) ?? URL(string:"bad"), title: "")
+]
+
+print("Movies only:")
+for case let Media.Movie(title, _, year) in mediaList {
+    print(" - \(title) (\(year))")
+}
+
+print("Movies by C. Columbus only:")
+for case let Media.Movie(title, director, year) in mediaList where director == "Chris Columbus" {
+    print(" - \(title) (\(year))")
+}
+
+
+
+
+extension Media {
+    var title: String? {
+        switch self {
+        case let .Book(title, _, _): return title
+        case let .Movie(title, _, _): return title
+        default: return nil
+        }
+    }
+    var kind: String {
+        /* Remember part 1 where we said we can omit the `(…)`
+         associated values in the `case` if we don't care about any of them? */
+        switch self {
+        case .Book: return "Book"
+        case .Movie: return "Movie"
+        case .WebSite: return "Web Site"
+        }
+    }
+}
+
+print("All mediums with a title starting with 'Harry Potter'")
+for case let (title?, kind) in mediaList.map({ ($0.title, $0.kind) })
+    where title.hasPrefix("Harry Potter") {
+        print(" - [\(kind)] \(title)")
+}
+
+
 
 
 
